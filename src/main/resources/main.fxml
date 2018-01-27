@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane fx:id="app" maxHeight="700.0" maxWidth="833.0" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#onKeyType" onKeyPressed="#onKeyType" onKeyReleased="#onKeyType" onKeyTyped="#onKeyType" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: linear-gradient(#123552, #496c89);" fx:controller="analizator.gui.Controller">
+   <bottom>
+        <VBox alignment="BOTTOM_CENTER" maxHeight="210.0" minHeight="180.0" minWidth="80.0" prefHeight="184.0" prefWidth="101.0" spacing="5.0" BorderPane.alignment="CENTER">
+       <children>
+           <TextArea fx:id="resultArea" minHeight="150.0" prefHeight="165.0" prefWidth="833.0" BorderPane.alignment="CENTER" />
+           <Button fx:id="analyzeButton" mnemonicParsing="false" style="-fx-background-color: linear-gradient(#734b8e, #9575ab); -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" onAction="#onAnalize" text="Анализ" />
+       </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets top="10.0" />
+            </padding>
+        </VBox>
+    </bottom>
+    <top>
+        <HBox alignment="TOP_LEFT" maxHeight="210.0" minHeight="180.0" minWidth="80.0" prefHeight="50.0" prefWidth="50.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="fileInputPath" onAction="#setPref" onKeyPressed="#setPref" onKeyReleased="#setPref" promptText="Путь к исследуемому файлу" text="" />
+                <Button fx:id="pathInButton" mnemonicParsing="false" style="-fx-background-color: linear-gradient(#734b8e, #9575ab); -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" onAction="#onRead" text="Открыть" />
+            </children>
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+        </HBox>
+    </top>
+    <center>
+        <HBox alignment="TOP_LEFT" maxHeight="210.0" minHeight="180.0" minWidth="80.0" prefHeight="50.0" prefWidth="50.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="fileOutputPath" onAction="#setPref" onKeyPressed="#setPref" onKeyReleased="#setPref" promptText="Путь к файлу с результатами" text="" />
+                <Button fx:id="pathOutButton" mnemonicParsing="false" style="-fx-background-color: linear-gradient(#734b8e, #9575ab); -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" onAction="#onWrite" text="Сохранить" />
+            </children>
+            <padding>
+                <Insets top="10.0" />
+            </padding>
+        </HBox>
+    </center>
+</BorderPane>
